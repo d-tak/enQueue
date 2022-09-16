@@ -1,6 +1,5 @@
 require('dotenv/config');
 const express = require('express');
-// const db = require('./db');
 const ClientError = require('./client-error');
 const errorMiddleware = require('./error-middleware');
 const staticMiddleware = require('./static-middleware');
@@ -22,7 +21,7 @@ app.get('/api/hello', (req, res) => {
   res.json({ hello: 'world' });
 });
 
-app.post('/api/business-profile', (req, res, next) => {
+app.post('/api/create-profile', (req, res, next) => {
   const { businessLocation, businessEmail, businessHours, businessUserFirstName, businessUserLastName, hashedPassword } = req.body;
   if (!businessLocation || !businessEmail || !businessHours || !businessUserFirstName || !businessUserLastName || !hashedPassword) {
     throw new ClientError(400, 'please complete required fields');

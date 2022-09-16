@@ -1,10 +1,10 @@
 import React from 'react';
-import BusinessProfile from '../components/business-profile';
+import HelloWorld from '../components/hello-world';
 
 export default function Home(props) {
   return (
     <div>
-      <BusinessProfile />
+      <HelloWorld />
     </div>
   );
 }

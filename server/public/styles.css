@@ -1,28 +1,9 @@
-/* * {
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.01);
-  font-family: Poppins, sans-serif;
-} */
-
 body {
   display: flex;
   justify-content: center;
   margin: 1rem;
 }
 
-/* main {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-} */
-
-/* @media only screen and (max-width: 600px) {
-  body {
-    background-color: rgba(0, 0, 0, 0.01);
-  }
-} */
 .graphic {
   background-image: url("/images/26059136.jpeg");
   background-size: cover;
