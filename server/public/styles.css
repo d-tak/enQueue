@@ -1,0 +1,90 @@
+body {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.graphic {
+  background-image: url("/images/26059136.jpeg");
+  background-size: cover;
+  width: 23rem;
+  height: 10rem;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  padding: 6rem 1rem;
+  font-family: Poppins, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.overlay {
+  padding-top: 2rem;
+  background: black;
+  opacity: 0.15;
+  position: absolute;
+  background-size: cover;
+  height: 3rem;
+  width: 15rem;
+}
+
+h2 {
+  font-family: Poppins, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+h3 {
+  font-family: Poppins, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+label {
+  font-family: Poppins, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+input {
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+  min-width: 15rem;
+  min-height: 2.25rem;
+  background: #f8f8f8;
+  border: solid #bdbdbd 0;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  padding: 0.25rem 0.5rem;
+  font-family: opensans, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #666;
+}
+
+p {
+  font-family: "open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #666;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.confirm {
+  margin-top: 2rem;
+  border-style: none;
+  border-radius: 0.1rem;
+  background-color: #da0012;
+  color: white;
+  padding: 0.25rem 4rem;
+  font-family: Poppins, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+}

@@ -1,8 +1,8 @@
 import React from 'react';
-import Home from './pages/home';
+import BusinessProfile from './components/business-profile';
 
 export default class App extends React.Component {
   render() {
-    return <Home />;
+    return <BusinessProfile />;
   }
 }
