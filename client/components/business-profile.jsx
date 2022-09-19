@@ -6,8 +6,7 @@ export default class BusinessProfile extends React.Component {
       businessLocation: '',
       businessEmail: '',
       businessHours: '',
-      businessUserFirstName: '',
-      businessUserLastName: '',
+      businessName: '',
       hashedPassword: ''
     };
     this.handleChange = this.handleChange.bind(this);
@@ -70,12 +69,8 @@ export default class BusinessProfile extends React.Component {
 
         <h3>Your Information</h3>
         <label>
-          <p> First Name</p>
-            <input required type="text" name="businessUserFirstName" className='' onChange={handleChange} placeholder='' />
-        </label>
-        <label>
-          <p> Last Name</p>
-            <input required type="text" name="businessUserLastName" className='' onChange={handleChange} placeholder='' />
+          <p> Business Name</p>
+            <input required type="text" name="businessName" className='' onChange={handleChange} placeholder='' />
         </label>
         <div>
           <label>

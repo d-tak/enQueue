@@ -22,17 +22,17 @@ app.get('/api/hello', (req, res) => {
 });
 
 app.post('/api/create-profile', (req, res, next) => {
-  const { businessLocation, businessEmail, businessHours, businessUserFirstName, businessUserLastName, hashedPassword } = req.body;
-  if (!businessLocation || !businessEmail || !businessHours || !businessUserFirstName || !businessUserLastName || !hashedPassword) {
+  const { businessLocation, businessEmail, businessHours, businessName, hashedPassword } = req.body;
+  if (!businessLocation || !businessEmail || !businessHours || !businessName || !hashedPassword) {
     throw new ClientError(400, 'please complete required fields');
   }
 
   argon2.hash(hashedPassword)
     .then(hashedPassword => {
-      const params = [businessLocation, businessEmail, businessHours, businessUserFirstName, businessUserLastName, hashedPassword];
+      const params = [businessLocation, businessEmail, businessHours, businessName, hashedPassword];
       const sql = `
-    insert into "business" ("businessLocation", "businessEmail", "businessHours", "businessUserFirstName", "businessUserLastName", "hashedPassword")
-    values ($1, $2, $3, $4, $5, $6)
+    insert into "business" ("businessLocation", "businessEmail", "businessHours", "businessName", "hashedPassword")
+    values ($1, $2, $3, $4, $5)
     returning "businessId", "businessEmail"
     `;
 
@@ -45,6 +45,27 @@ app.post('/api/create-profile', (req, res, next) => {
     })
     .catch(err => next(err));
 
+});
+
+app.post('/api/patron-info', (req, res, next) => {
+  const { businessId, patronETA, patronPartySize, patronFirstName, patronLastName, patronMobile, patronComments } = req.body;
+  if (!businessId || !patronETA || !patronPartySize || !patronFirstName || !patronLastName || !patronMobile || !patronComments) {
+    throw new ClientError(400, 'please complete required fields');
+  }
+
+  const params = [businessId, patronETA, patronPartySize, patronFirstName, patronLastName, patronMobile, patronComments];
+  const sql = `
+    insert into "waitList" ("businessId", "patronETA", "patronPartySize", "patronFirstName", "patronLastName", "patronMobile", "patronComments")
+    values ($1, $2, $3, $4, $5, $6, $7)
+    returning "patronWaitId", "patronFirstName";
+    `;
+
+  db.query(sql, params)
+    .then(result => {
+      const [firstElement] = result.rows;
+      return res.status(201).send(firstElement);
+    })
+    .catch(err => next(err));
 });
 
 app.use(errorMiddleware);

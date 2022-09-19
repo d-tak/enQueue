@@ -11,8 +11,7 @@ CREATE TABLE "public"."business" (
 	"businessLocation" TEXT NOT NULL,
 	"businessEmail" TEXT NOT NULL,
 	"businessHours" TEXT,
-	"businessUserFirstName" TEXT NOT NULL,
-	"businessUserLastName" TEXT NOT NULL,
+	"businessName" TEXT NOT NULL,
 	"hashedPassword" TEXT NOT NULL,
 	CONSTRAINT "business_pk" PRIMARY KEY ("businessId")
 ) WITH (
@@ -24,6 +23,8 @@ CREATE TABLE "public"."business" (
 CREATE TABLE "public"."waitList" (
 	"businessId" integer NOT NULL,
 	"patronWaitId" serial NOT NULL,
+  "patronETA" TEXT NOT NULL,
+  "patronPartySize" integer NOT NULL,
 	"patronFirstName" TEXT NOT NULL,
 	"patronLastName" TEXT NOT NULL,
 	"patronMobile" TEXT NOT NULL,
