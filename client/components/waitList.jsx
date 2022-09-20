@@ -1,4 +1,6 @@
 import React from 'react';
+// import parseRoute from '../lib/parse-route';
+// import BusinessProfile from '../components/business-profile';
 export default class WaitList extends React.Component {
   constructor(props) {
     super(props);
@@ -8,10 +10,18 @@ export default class WaitList extends React.Component {
       patronFirstName: '',
       patronLastName: '',
       patronMobile: '',
-      patronComments: ''
+      patronComments: '',
+      isWaiting: true,
+      business: null
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    fetch(`/api/business/${this.props.businessId}`)
+      .then(response => response.json())
+      .then(businessId => this.setState({ businessId, isWaiting: false }));
   }
 
   handleChange(event) {
@@ -38,10 +48,27 @@ export default class WaitList extends React.Component {
   }
 
   render() {
+    if (!this.state.businessId) return null;
+    const { businessName, businessLocation, businessEmail, businessHours } = this.state.businessId[0];
     const { handleChange, handleSubmit } = this;
 
     return (
       <>
+        {/* <div className="container">
+          <h1>final project</h1>
+          <hr />
+          <div className="row">
+            <h1 className="h1">{(businessName)}</h1>
+
+              this.state.business(businessEmail
+                <div key={business.businessId} className="">
+                   <BusinessProfile business={this.state.business} />
+                 // </div>
+               ))
+
+          </div>
+        </div> */}
+
         <div className="container">
           <div className="row">
             <div className="column-full">
@@ -49,9 +76,9 @@ export default class WaitList extends React.Component {
                 <div className="overlay">
                 </div>
                 {/* <div className="text"> */}
-                  <h1 className="h1-title">filoKitchen oc</h1>
-                  <p className="location">Irvine, CA</p> <br></br>
-                  <p className="email">togetherisbetter@filoKitchen.eats</p>
+                  <h1 className="h1-title">{businessName}</h1>
+                  <p className="location">{businessLocation}</p> <br></br>
+                  <p className="email">{businessEmail}</p>
                 {/* </div> */}
               </div>
             </div>
@@ -60,11 +87,7 @@ export default class WaitList extends React.Component {
           <div className="row row-wrap">
             <div className="column-half">
               <p className="hours-header"> Operating Hours:</p>
-              <p className="hours">
-                Monday - Friday &nbsp;11:00 AM - 10:00 PM <br></br>
-                Saturdays &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;11:00 AM - 11:00 PM <br></br>
-                Sundays   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Closed <br></br>
-              </p>
+              <p className="hours">{businessHours}</p>
             </div>
 
             <div className="column-half">

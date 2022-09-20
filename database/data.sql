@@ -8,7 +8,7 @@ insert into "business" (
 values (
   'Irvine, CA',
   'abc123@gmail.com',
-  'closed',
+  'Closed',
   'filoKitchen oc',
   'password'
 );

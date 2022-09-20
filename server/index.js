@@ -21,7 +21,7 @@ app.get('/api/hello', (req, res) => {
   res.json({ hello: 'world' });
 });
 
-app.post('/api/create-profile', (req, res, next) => {
+app.post('/api/business', (req, res, next) => {
   const { businessLocation, businessEmail, businessHours, businessName, hashedPassword } = req.body;
   if (!businessLocation || !businessEmail || !businessHours || !businessName || !hashedPassword) {
     throw new ClientError(400, 'please complete required fields');
@@ -64,6 +64,26 @@ app.post('/api/patron-info', (req, res, next) => {
     .then(result => {
       const [firstElement] = result.rows;
       return res.status(201).send(firstElement);
+    })
+    .catch(err => next(err));
+});
+
+app.get('/api/business/:businessId', (req, res, next) => {
+  const { businessId } = req.params;
+  const sql = `
+    select  "businessName",
+            "businessLocation",
+            "businessEmail",
+            "businessHours"
+      from  "business"
+     where  "businessId" = $1
+  `;
+
+  const params = [businessId];
+
+  db.query(sql, params)
+    .then(result => {
+      res.json(result.rows);
     })
     .catch(err => next(err));
 });

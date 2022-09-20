@@ -97,6 +97,15 @@ input {
   color: #666;
 }
 
+.business-hours {
+  min-width: 30rem;
+  min-height: 6rem;
+}
+
+.business-name {
+  min-width: 30rem;
+}
+
 .hours-header {
   position: absolute;
   font-family: "open sans", sans-serif;

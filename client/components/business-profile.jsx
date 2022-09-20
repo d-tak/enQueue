@@ -20,7 +20,7 @@ export default class BusinessProfile extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const action = 'create-profile';
+    const action = 'business';
 
     const req = {
       method: 'POST',
@@ -40,16 +40,27 @@ export default class BusinessProfile extends React.Component {
 
     return (
     <>
-      <div className="row">
-        <div className="column-full">
-          <div className="graphic">
-            <div className="rname">
-              <h1 className="h1-title">WaitingFuze</h1>
+      <div className="container">
+        <div className="row">
+          <div className="column-full">
+            <div className="graphic">
+              <div className="overlay">
+              </div>
+                <h1 className="h1-title">WaitingFuze</h1>
+                <p className="location">Business Profile</p> <br></br>
+                <p className="email"></p>
+              </div>
+            </div>
+          </div>
+
+          <div className="row row-wrap">
+            <div className="column-half">
+            </div>
+            <div className="column-half">
+              <h2>Join the Waitlist</h2>
             </div>
           </div>
         </div>
-      </div>
-      <h2>Join the Waitlist</h2>
 
       <form onSubmit={handleSubmit}>
         <div>
@@ -65,12 +76,12 @@ export default class BusinessProfile extends React.Component {
         <div>
           <label>Enter Hours of Operation</label>
         </div>
-          <input required type="text" name="businessHours" className='' onChange={handleChange} placeholder='' />
+          <input required type="text" name="businessHours" className='business-hours' onChange={handleChange} placeholder='' />
 
         <h3>Your Information</h3>
         <label>
           <p> Business Name</p>
-            <input required type="text" name="businessName" className='' onChange={handleChange} placeholder='' />
+            <input required type="text" name="businessName" className='business-name' onChange={handleChange} placeholder='' />
         </label>
         <div>
           <label>
