@@ -1,6 +1,4 @@
 import React from 'react';
-// import parseRoute from '../lib/parse-route';
-// import BusinessProfile from '../components/business-profile';
 export default class WaitList extends React.Component {
   constructor(props) {
     super(props);
@@ -54,20 +52,6 @@ export default class WaitList extends React.Component {
 
     return (
       <>
-        {/* <div className="container">
-          <h1>final project</h1>
-          <hr />
-          <div className="row">
-            <h1 className="h1">{(businessName)}</h1>
-
-              this.state.business(businessEmail
-                <div key={business.businessId} className="">
-                   <BusinessProfile business={this.state.business} />
-                 // </div>
-               ))
-
-          </div>
-        </div> */}
 
         <div className="container">
           <div className="row">
@@ -75,11 +59,9 @@ export default class WaitList extends React.Component {
               <div className="graphic">
                 <div className="overlay">
                 </div>
-                {/* <div className="text"> */}
                   <h1 className="h1-title">{businessName}</h1>
                   <p className="location">{businessLocation}</p> <br></br>
                   <p className="email">{businessEmail}</p>
-                {/* </div> */}
               </div>
             </div>
           </div>

@@ -28,13 +28,12 @@ export default class App extends React.Component {
       const businessId = route.params.get('businessId');
       return <WaitList businessId={businessId} />;
     }
-    return <WaitList />;
+    return <null />;
   }
 
   render() {
     return (
       <>
-        {/* <WaitList /> */}
         {this.renderPage()}
       </>
     );
