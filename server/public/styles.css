@@ -1,34 +1,66 @@
 body {
+  background-color: rgb(235, 235, 235);
   display: flex;
   justify-content: center;
   margin: 1rem;
 }
 
+.row {
+  display: flex;
+}
+
+.row-wrap {
+  flex-wrap: wrap;
+}
+
+.column-half {
+  width: 50%;
+}
+
 .graphic {
-  background-image: url("/images/26059136.jpeg");
-  background-size: cover;
-  width: 23rem;
-  height: 10rem;
+  background-image: url("/images/header.jpg");
+  background-size: contain;
+  width: 485px;
+  height: 235px;
   position: relative;
   background-repeat: no-repeat;
 }
 
-h1 {
-  padding: 6rem 1rem;
+.h1-title {
+  position: absolute;
+  padding: 8.5rem 1rem;
   font-family: Poppins, sans-serif;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
+  color: white;
+}
+
+.location {
+  position: absolute;
+  bottom: 1.5rem;
+  margin-left: 1.1rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 200;
+  color: white;
+}
+
+.email {
+  position: absolute;
+  bottom: 0.6rem;
+  margin-left: 1.1rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 300;
   color: white;
 }
 
 .overlay {
-  padding-top: 2rem;
-  background: black;
-  opacity: 0.15;
+  background: linear-gradient(transparent, rgb(0 0 0 / 80%));
   position: absolute;
-  background-size: cover;
-  height: 3rem;
-  width: 15rem;
+  bottom: 0;
+  width: 485px;
+  height: 170px;
 }
 
 h2 {
@@ -65,11 +97,50 @@ input {
   color: #666;
 }
 
+.business-hours {
+  min-width: 30rem;
+  min-height: 6rem;
+}
+
+.business-name {
+  min-width: 30rem;
+}
+
+.hours-header {
+  position: absolute;
+  font-family: "open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: black;
+}
+
+.hours {
+  margin-top: 2rem;
+  font-family: "open sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: black;
+}
+
 p {
   font-family: "open sans", sans-serif;
   font-size: 0.8rem;
   font-weight: 300;
   color: #666;
+}
+
+.patron-eta {
+  min-width: 10rem;
+}
+
+.party-size {
+  min-width: 10rem;
+}
+
+.patron-comments {
+  min-width: 30rem;
+  min-height: 6rem;
+  position: top;
 }
 
 .center {
