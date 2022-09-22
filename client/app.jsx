@@ -33,9 +33,6 @@ export default class App extends React.Component {
       const businessId = route.params.get('businessId');
       return <ViewBusinessProfile businessId={businessId} />;
     }
-    // if (route.path === 'view-business-profile') {
-    //   return <ViewBusinessProfile />;
-    // }
     return <null />;
   }
 
