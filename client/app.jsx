@@ -1,6 +1,7 @@
 import React from 'react';
 import BusinessProfile from './components/business-profile';
 import WaitList from './components/waitList';
+import ViewBusinessProfile from './components/view-business-profile';
 import parseRoute from './lib/parse-route';
 
 export default class App extends React.Component {
@@ -27,6 +28,10 @@ export default class App extends React.Component {
     if (route.path === 'waitList') {
       const businessId = route.params.get('businessId');
       return <WaitList businessId={businessId} />;
+    }
+    if (route.path === 'viewbusinessprofile') {
+      const businessId = route.params.get('businessId');
+      return <ViewBusinessProfile businessId={businessId} />;
     }
     return <null />;
   }

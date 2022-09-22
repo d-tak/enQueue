@@ -20,7 +20,6 @@ export default class BusinessProfile extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const action = 'business';
 
     const req = {
       method: 'POST',
@@ -29,9 +28,10 @@ export default class BusinessProfile extends React.Component {
       },
       body: JSON.stringify(this.state)
     };
-    fetch(`/api/${action}`, req)
+    fetch('/api/business', req)
       .then(res => res.json())
       .then(result => {
+        window.location.hash = 'viewbusinessprofile?businessId=' + result.businessId;
       });
   }
 
@@ -90,7 +90,7 @@ export default class BusinessProfile extends React.Component {
           </label>
         </div>
         <div className="center">
-          <button className='confirm'>Confirm</button>
+            <button className='confirm'>Confirm</button>
         </div>
 
       </form>

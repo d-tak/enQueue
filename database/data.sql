@@ -14,7 +14,7 @@ values (
 );
 
 insert into "waitList" (
-  "patronWaitId",
+  "businessId",
   "patronETA",
   "patronPartySize",
 	"patronFirstName",

@@ -149,7 +149,21 @@ p {
 }
 
 .confirm {
+  text-decoration: none;
   margin-top: 2rem;
+  border-style: none;
+  border-radius: 0.1rem;
+  background-color: #da0012;
+  color: white;
+  padding: 0.25rem 4rem;
+  font-family: Poppins, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.return {
+  text-decoration: none;
+  margin-top: 5rem;
   border-style: none;
   border-radius: 0.1rem;
   background-color: #da0012;
