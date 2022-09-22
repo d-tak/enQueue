@@ -21,10 +21,10 @@ CREATE TABLE "public"."business" (
 
 
 CREATE TABLE "public"."waitList" (
-	"businessId" integer NOT NULL,
+	"businessId" int NOT NULL,
 	"patronWaitId" serial NOT NULL,
   "patronETA" TEXT NOT NULL,
-  "patronPartySize" integer NOT NULL,
+  "patronPartySize" int NOT NULL,
 	"patronFirstName" TEXT NOT NULL,
 	"patronLastName" TEXT NOT NULL,
 	"patronMobile" TEXT NOT NULL,
