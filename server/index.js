@@ -57,7 +57,7 @@ app.post('/api/patron-info', (req, res, next) => {
   const sql = `
     insert into "waitList" ("businessId", "patronETA", "patronPartySize", "patronFirstName", "patronLastName", "patronMobile", "patronComments")
     values ($1, $2, $3, $4, $5, $6, $7)
-    returning "patronWaitId", "patronFirstName";
+    returning "businessId", "patronWaitId", "patronFirstName", "patronPartySize";
     `;
 
   db.query(sql, params)
@@ -76,6 +76,24 @@ app.get('/api/business/:businessId', (req, res, next) => {
             "businessEmail",
             "businessHours"
       from  "business"
+     where  "businessId" = $1
+  `;
+
+  const params = [businessId];
+
+  db.query(sql, params)
+    .then(result => {
+      res.json(result.rows);
+    })
+    .catch(err => next(err));
+});
+
+app.get('/api/business/:businessId/patron-info', (req, res, next) => {
+  const { businessId } = req.params;
+  const sql = `
+    select  "patronFirstName",
+            "patronPartySize"
+      from  "waitList"
      where  "businessId" = $1
   `;
 

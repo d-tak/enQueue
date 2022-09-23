@@ -148,6 +148,34 @@ p {
   justify-content: center;
 }
 
+.right {
+  display: flex;
+  justify-content: right;
+}
+
+.join-waitlist {
+  margin-top: 0.5rem;
+  font-family: Poppins, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: right;
+  color: black;
+}
+
+.view-waitlist {
+  position: absolute;
+  margin-top: 2.25rem;
+  text-decoration: none;
+  border-style: none;
+  border-radius: 0.3rem;
+  background-color: #227ae3;
+  color: white;
+  padding: 0.35rem 0.5rem;
+  font-family: "open sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
 .confirm {
   text-decoration: none;
   margin-top: 2rem;
@@ -172,4 +200,33 @@ p {
   font-family: Poppins, sans-serif;
   font-size: 0.75rem;
   font-weight: 300;
+}
+
+.subheader {
+  font-family: Poppins, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: black;
+}
+
+.patron-info {
+  font-family: "open sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  list-style: none;
+  padding-bottom: 0.75rem;
+  text-align: center;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
 }

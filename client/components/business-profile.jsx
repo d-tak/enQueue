@@ -57,7 +57,7 @@ export default class BusinessProfile extends React.Component {
             <div className="column-half">
             </div>
             <div className="column-half">
-              <h2>Join the Waitlist</h2>
+              <h2>Business Entry Form</h2>
             </div>
           </div>
         </div>

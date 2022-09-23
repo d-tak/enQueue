@@ -1,23 +1,33 @@
 import React from 'react';
-export default class ViewBusinessProfile extends React.Component {
+export default class ViewWaitList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isWaiting: true,
-      business: null
+      business: null,
+      waitList: null
     };
   }
 
   componentDidMount() {
     fetch(`/api/business/${this.props.businessId}`)
       .then(response => response.json())
-      .then(businessId =>
-        this.setState({ businessId, isWaiting: false }));
+      .then(businessId => {
+        this.setState({ businessId, isWaiting: false });
+      });
+    fetch(`/api/business/${this.props.businessId}/patron-info`)
+      .then(response => response.json())
+      .then(patronWaitId => {
+        this.setState({ patronWaitId, isWaiting: false });
+      });
   }
 
   render() {
     if (!this.state.businessId) return null;
     const { businessName, businessLocation, businessEmail, businessHours } = this.state.businessId[0];
+    if (!this.state.patronWaitId) return null;
+    // const { patronFirstName, patronPartySize } = this.state.patronWaitId;
+    // console.log(this.state.patronWaitId);
     return (
       <>
 
@@ -40,19 +50,24 @@ export default class ViewBusinessProfile extends React.Component {
               <p className="hours">{businessHours}</p>
             </div>
 
-            <div className="right column-half">
-              <a href={`#waitList?businessId=${this.props.businessId}`} className="join-waitlist">Join the Waitlist</a>
-              <a href= {`#viewwaitlist?businessId=${this.props.businessId}`} className="view-waitlist">Click To See Waitlist</a>
-            </div>
-          </div>
-          <div className="row row-wrap">
             <div className="column-half">
+
+              <h2>WaitingFuze</h2>
             </div>
           </div>
 
-            <div className="center">
-              <a href="#" className='return'>Return</a>
-            </div>
+          <div className="row center">
+            <p className="subheader">Current Wait</p>
+          </div>
+
+          <div className="">
+            {this.state.patronWaitId.map((patron, index) =>
+              <li key = {index} className="patron-info"> {patron.patronFirstName} - {patron.patronPartySize}</li>)}
+          </div>
+
+          <div className="center">
+            <a href={`#waitList?businessId=${this.props.businessId}`} className='return'>Return</a>
+          </div>
         </div>
       </>
     );
