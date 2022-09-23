@@ -29,8 +29,8 @@ export default class WaitList extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const action = 'patron-info';
-    const request = { ...this.state, businessId: 1 };
+    const businessIdprop = this.props.businessId;
+    const request = { ...this.state, businessId: businessIdprop };
 
     const req = {
       method: 'POST',
@@ -39,9 +39,10 @@ export default class WaitList extends React.Component {
       },
       body: JSON.stringify(request)
     };
-    fetch(`/api/${action}`, req)
+    fetch('/api/patron-info', req)
       .then(res => res.json())
       .then(result => {
+        window.location.hash = 'viewwaitlist?businessId=' + result.businessId;
       });
   }
 
@@ -73,7 +74,7 @@ export default class WaitList extends React.Component {
             </div>
 
             <div className="column-half">
-            <h2>Join the Waitlist</h2>
+              <h2>Waitlist</h2>
             </div>
           </div>
 
