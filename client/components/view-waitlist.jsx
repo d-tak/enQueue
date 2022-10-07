@@ -26,8 +26,6 @@ export default class ViewWaitList extends React.Component {
     if (!this.state.businessId) return null;
     const { businessName, businessLocation, businessEmail, businessHours } = this.state.businessId[0];
     if (!this.state.patronWaitId) return null;
-    // const { patronFirstName, patronPartySize } = this.state.patronWaitId;
-    // console.log(this.state.patronWaitId);
     return (
       <>
 
