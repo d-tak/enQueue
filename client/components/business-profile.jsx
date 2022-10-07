@@ -47,8 +47,8 @@ export default class BusinessProfile extends React.Component {
               <div className="graphic">
                 <div className="overlay">
                 </div>
-                <h1 className="h1-title">WaitingFuze</h1>
-                <p className="location">Southern California</p> <br></br>
+                <h1 className="h1-title">enQueue</h1>
+                <p className="location">A Simple Waiting List Application</p> <br></br>
                 <p className="email">Business Profiles</p>
               </div>
             </div>
