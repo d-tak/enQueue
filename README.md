@@ -44,8 +44,45 @@ As the world continues to race around us, waiting shouldn't feel like forever.
 
 
 ## Getting Started
+**For end-users**
 * To access this project, click on the provided url.
 * Upon first glance, business owners will be presented with a form that will generate a profile once data is inputted.
 * Businesses and patrons can navigate through the application by utilizing the provided buttons.
 
-* If you would like to navigate through the code, directly, please feel free to contact me.  I'd love to connect with you and discuss this project!
+**For Developers** <br>
+*If you are a developer and are interested in collaborating with the existing code in this project, please proceed to the following.  Thank you for your interest and support!*
+
+1. Clone repository. <br>
+[Click to access repository on GitHub](https://github.com/d-tak/final-project)
+
+2. Install dependencies in ```package.json``` with npm (if needed). <br>
+```npm install```
+
+3. Create an ```.env``` file using the ```.env.example``` template as a reference. <br>
+```cp .env.example .env```
+
+4. Update the environment variable in the ```.env``` file<br>
+```DATABASE_URL=postgres://dev:dev@localhost/[nameOfDatabase]?sslmode=disable```
+
+5. Ensure that ```postgresql``` is running by using the following commands in your terminal. <br>
+```sudo service postgresql status``` <br>
+```sudo service postgresql start``` <br>
+```sudo service postgresql stop```
+
+6. Create a database (if necessary). <br>
+```createdb nameOfDatabase```
+
+7. Initialize the database<br>
+**(WARNING! Make sure you have the right database in the DATABASE_URL).** <br>
+```npm run db:import```
+
+8. Launch the database in your local browser to view user inputs<br>
+```pgweb --db=[nameOfProject]```
+
+9. Build and start the application.<br>
+```npm run build``` <br>
+```npm run start```
+
+
+10. The application should become accessible via your localhost in the browser at:
+```http://localhost:3000```
