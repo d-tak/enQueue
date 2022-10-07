@@ -74,7 +74,7 @@ export default class WaitList extends React.Component {
             </div>
 
             <div className="column-half">
-              <h2>Waitlist</h2>
+              <h2 className="right">Waitlist</h2>
             </div>
           </div>
 
@@ -108,7 +108,7 @@ export default class WaitList extends React.Component {
             <div>
               <label>
                 <p> Comments / Remarks</p>
-                <input required type="text" name="patronComments" className='patron-comments' onChange={handleChange} placeholder='' />
+                <textarea required type="text" name="patronComments" className='patron-comments' onChange={handleChange} placeholder='' />
               </label>
               </div>
             <div className="center">

@@ -39,62 +39,65 @@ export default class BusinessProfile extends React.Component {
     const { handleChange, handleSubmit } = this;
 
     return (
-    <>
-      <div className="container">
-        <div className="row">
-          <div className="column-full">
-            <div className="graphic">
-              <div className="overlay">
-              </div>
+      <>
+
+        <div className="container">
+          <div className="row">
+            <div className="column-full">
+              <div className="graphic">
+                <div className="overlay">
+                </div>
                 <h1 className="h1-title">WaitingFuze</h1>
-                <p className="location">Business Profile</p> <br></br>
-                <p className="email"></p>
+                <p className="location">Southern California</p> <br></br>
+                <p className="email">Business Profiles</p>
               </div>
             </div>
           </div>
 
           <div className="row row-wrap">
             <div className="column-half">
+              <p className="hours-header"></p>
+              <p className="hours"></p>
             </div>
+
             <div className="column-half">
-              <h2>Business Entry Form</h2>
+              <h2 className="right">Create A Business Profile</h2>
             </div>
           </div>
-        </div>
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Enter Location</label>
-        </div>
-          <input required type="text" name="businessLocation" className="" onChange={handleChange} placeholder='City, State' />
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label>Enter Location</label>
+            </div>
+            <input required type="text" name="businessLocation" className="" onChange={handleChange} placeholder='City, State' />
 
-        <div>
-          <label>Enter E-Mail Address</label>
-        </div>
-          <input required type="text" name="businessEmail" className="" onChange={handleChange} placeholder='abc123@gmail.com' />
+            <div>
+              <label>Enter E-Mail Address</label>
+            </div>
+            <input required type="text" name="businessEmail" className="" onChange={handleChange} placeholder='abc123@gmail.com' />
 
-        <div>
-          <label>Enter Hours of Operation</label>
-        </div>
-          <input required type="text" name="businessHours" className='business-hours' onChange={handleChange} placeholder='' />
+            <div>
+              <label>Enter Hours of Operation</label>
+            </div>
+            <textarea required type="text" name="businessHours" className='business-hours' onChange={handleChange} placeholder='' />
 
-        <h3>Your Information</h3>
-        <label>
-          <p> Business Name</p>
-            <input required type="text" name="businessName" className='business-name' onChange={handleChange} placeholder='' />
-        </label>
-        <div>
-          <label>
-            <p> Create Password</p>
-              <input required type="password" name="hashedPassword" className='' onChange={handleChange} placeholder='' />
-          </label>
+            <h3>Your Information</h3>
+            <label>
+              <p> Business Name</p>
+              <input required type="text" name="businessName" className='business-name' onChange={handleChange} placeholder='' />
+            </label>
+            <div>
+              <label>
+                <p> Create Password</p>
+                <input required type="password" name="hashedPassword" className='' onChange={handleChange} placeholder='' />
+              </label>
+            </div>
+            <div className="center">
+              <button className='confirm'>Confirm</button>
+            </div>
+          </form>
         </div>
-        <div className="center">
-            <button className='confirm'>Confirm</button>
-        </div>
-
-      </form>
-    </>
+      </>
     );
   }
 }

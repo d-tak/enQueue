@@ -5,30 +5,18 @@ body {
   margin: 1rem;
 }
 
-.row {
-  display: flex;
-}
-
-.row-wrap {
-  flex-wrap: wrap;
-}
-
-.column-half {
-  width: 50%;
-}
-
 .graphic {
   background-image: url("/images/header.jpg");
   background-size: contain;
-  width: 485px;
-  height: 235px;
+  width: 31rem;
+  height: 15rem;
   position: relative;
   background-repeat: no-repeat;
 }
 
 .h1-title {
   position: absolute;
-  padding: 8.5rem 1rem;
+  padding: 8.5rem 1rem 0;
   font-family: Poppins, sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
@@ -59,8 +47,8 @@ body {
   background: linear-gradient(transparent, rgb(0 0 0 / 80%));
   position: absolute;
   bottom: 0;
-  width: 485px;
-  height: 170px;
+  width: 31rem;
+  height: 8.75rem;
 }
 
 h2 {
@@ -91,7 +79,22 @@ input {
   border: solid #bdbdbd 0;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   padding: 0.25rem 0.5rem;
-  font-family: opensans, sans-serif;
+  font-family: "open sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #666;
+}
+
+textarea {
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+  min-width: 15rem;
+  min-height: 2.25rem;
+  background: #f8f8f8;
+  border: solid #bdbdbd 0;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  padding: 0.25rem 0.5rem;
+  font-family: "open sans", sans-serif;
   font-size: 0.75rem;
   font-weight: 300;
   color: #666;
@@ -138,7 +141,7 @@ p {
 }
 
 .patron-comments {
-  min-width: 30rem;
+  min-width: 21.2rem;
   min-height: 6rem;
   position: top;
 }
