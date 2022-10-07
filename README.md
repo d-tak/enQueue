@@ -1,15 +1,14 @@
-# final-project
-
+# enQueue
 ## A dynamic, full stack JavaScript solo project.
 
 This project provides a simple, functional platform for businesses to utilize a digital queue system.
 
-As society continues to yearn for togetherness, small-businesses often struggle to keep up with the demand and onset of customer clientele.  This application affords businesses a simple yet practical platform to keep track of guests and patrons.  Whether operating food services such as dining establishments, providing personal care via salons and barbershops, or simply having the need for a digital waitlist, WaitingFuze allows users to keep track of a waiting log.
+As society continues to yearn for togetherness, small-businesses often struggle to keep up with the demand and onset of customer clientele.  This application affords businesses a simple yet practical platform to keep track of guests and patrons.  Whether operating food services such as dining establishments, providing personal care via salons and barbershops, or simply having the need for a digital waitlist, enQueue allows users to keep track of a waiting log.
 
 As the world continues to race around us, waiting shouldn't feel like forever.
 
 
-**[Click Here To View Live Demo](https://waitlist.d-tak.com "WaitingFuze - A Full Stack JavaScript Solo Project")**
+**[Click Here To View Live Demo](https://enqueue.d-tak.com "enQueue - A Full Stack JavaScript Solo Project")**
 
 ## Technologies Applied
 * HTML
@@ -35,7 +34,7 @@ As the world continues to race around us, waiting shouldn't feel like forever.
 * Patrons can view the waitlist and its existing queues in order
 
 ## Application Preview
-![waitingFuze Demo](/server/public/images/demo.gif)
+![enQueue Demo](/server/public/images/demo.gif)
 
 ## Stretch Features
 * Users can delete their entries
@@ -53,7 +52,7 @@ As the world continues to race around us, waiting shouldn't feel like forever.
 *If you are a developer and are interested in collaborating with the existing code in this project, please proceed to the following.  Thank you for your interest and support!*
 
 1. Clone repository. <br>
-[Click to access repository on GitHub](https://github.com/d-tak/final-project)
+[Click to access repository on GitHub](https://github.com/d-tak/enQueue)
 
 2. Install dependencies in ```package.json``` with npm (if needed). <br>
 ```npm install```
